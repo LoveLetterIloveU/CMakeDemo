@@ -65,6 +65,6 @@ find_library(log-lib log)
 
 
 # add_subdirectory顺序无依赖关系
-add_subdirectory(${PROJECT_SOURCE_DIR}/main_code) # 设置子CMakeList文件路径，c_application_main为project名
+add_subdirectory(${PROJECT_SOURCE_DIR}/main_code c_main) # 设置子CMakeList文件路径，c_main为project名
 add_subdirectory(depedency_code) # 同名可直接设置
 

@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.22.1)
 
+project(c_main)
+
 message("CMAKE_CURRENT_LIST_DIR = ${CMAKE_CURRENT_LIST_DIR}")
 
 set(NATIVE_SOURCES
