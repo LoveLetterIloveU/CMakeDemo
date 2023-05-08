@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Used to load the 'capplication' library on application startup.
     static {
-        System.loadLibrary("capplication");
+        System.loadLibrary("c_main");
     }
 
     private ActivityMainBinding binding;
