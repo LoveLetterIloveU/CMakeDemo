@@ -5,8 +5,7 @@
 #ifndef CAPPLICATION_DEPEDENCY_H
 #define CAPPLICATION_DEPEDENCY_H
 
-#include <iostream>
-using namespace std;
+#include <string>
 
 class Depedency {
 public:
