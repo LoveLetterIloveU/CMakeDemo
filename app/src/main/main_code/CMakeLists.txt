@@ -37,7 +37,7 @@ if (PKG_SIZE_OPT)
 endif ()
 
 
-# 声明库之间的依赖关系，这里capplication依赖log-lib 和 自研静态库c_depedency
+# 声明库之间的依赖关系，这里cmakedemo依赖log-lib 和 自研静态库c_depedency
 target_link_libraries(c_main ${log-lib})
 target_link_libraries(c_main c_depedency)
 #target_link_libraries(c_main kyrenia::kyrenia) # 依赖prefab库

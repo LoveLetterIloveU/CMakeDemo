@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.capplication'
+    namespace 'com.example.cmakedemo'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.capplication"
+        applicationId "com.example.cmakedemo"
         minSdk 24
         targetSdk 33
         versionCode 1

@@ -1,15 +1,15 @@
-package com.example.capplication;
+package com.example.cmakedemo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.TextView;
 
-import com.example.capplication.databinding.ActivityMainBinding;
+import com.example.cmakedemo.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Used to load the 'capplication' library on application startup.
+    // Used to load the 'cmakedemo' library on application startup.
     static {
         System.loadLibrary("c_main");
     }
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * A native method that is implemented by the 'capplication' native library,
+     * A native method that is implemented by the 'cmakedemo' native library,
      * which is packaged with this application.
      */
     public native String stringFromJNI();

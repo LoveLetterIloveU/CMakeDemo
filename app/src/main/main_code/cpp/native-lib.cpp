@@ -5,7 +5,7 @@
 #include <c_version.h>
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_com_example_capplication_MainActivity_stringFromJNI(
+Java_com_example_cmakedemo_MainActivity_stringFromJNI(
         JNIEnv* env,
         jobject /* this */) {
     std::string hello = "String from C++ : ";

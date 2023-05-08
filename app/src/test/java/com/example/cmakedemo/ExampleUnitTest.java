@@ -1,4 +1,4 @@
-package com.example.capplication;
+package com.example.cmakedemo;
 
 import org.junit.Test;
 
