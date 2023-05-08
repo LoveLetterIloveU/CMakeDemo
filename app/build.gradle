@@ -1,0 +1,83 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.example.capplication'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example.capplication"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        // cmake 2:android->defaultConfig->externalNativeBuild 指定c++版本
+        externalNativeBuild {
+            cmake {
+                abiFilters 'armeabi-v7a', 'arm64-v8a'
+                arguments "-DANDROID_ARM_NEON=TRUE", "-DANDROID_TOOLCHAIN=clang", "-DANDROID_STL=c++_shared", "-DUSE_ASAN=FALSE", "-DINSTRU_FUNC=FALSE", "-DMERGE_TRONSDL=TRUE", "-DPKG_SIZE_OPT=TRUE"
+                cFlags ""
+//                "-fno-rtti -fno-exceptions" 主要用于减少so包体积
+                cppFlags '-fno-rtti', '-fno-exceptions'
+//                targets "libexample-one" "my-executible-demo"
+            }
+
+        }
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+//    sourceSets {
+//        main.jni {
+//            srcDirs = ['src/main/cpp']
+//        }
+//    }
+
+    //cmake 1: android->externalNativeBuild 指定cmake文件路径和版本
+    externalNativeBuild {
+        //指定cmake文件路
+        cmake {
+            path file('src/main/cmake/CMakeLists.txt')
+            version '3.22.1'
+        }
+
+        //指定mk文件路
+//        ndkBuild {
+//            path 'src/main/cpp/Android.mk'
+//            buildStagingDirectory "./outputs/ndk-build"
+//        }
+
+    }
+
+    // 声明ndk版本
+    ndkVersion '23.2.8568313'
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+}
